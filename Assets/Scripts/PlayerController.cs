@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "RoomCam")
         {
             other.GetComponent<CinemachineVirtualCamera>().enabled = true;

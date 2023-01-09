@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class ExplosionManager : MonoBehaviour
 {
-    private CircleCollider2D Col;
+    private CircleCollider2D _col;
+
+    private AudioSource _audio;
     // Start is called before the first frame update
     void Start()
     {
-        Col = GetComponent<CircleCollider2D>();
+        _col = GetComponent<CircleCollider2D>();
+        _audio = GetComponent<AudioSource>();
     }
     
     public void EnableCollider()
     {
-        Col.enabled = true;
+        _audio.Play();
+        _col.enabled = true;
     }
     public void DisableCollider()
     {
-        Col.enabled = false;
+        _col.enabled = false;
         Destroy(gameObject);
     }
 }

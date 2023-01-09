@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Tp_script : MonoBehaviour
 {
-
-
     [SerializeField]
     private Transform _tpPoint;
 

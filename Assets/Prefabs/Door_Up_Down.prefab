@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5263345106377255011}
   - component: {fileID: 987093690947526479}
-  - component: {fileID: 3563039725967428172}
+  - component: {fileID: 6718878408423975561}
   m_Layer: 0
   m_Name: DoorUp
   m_TagString: Door
@@ -124,7 +124,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0084128, y: 0.45429802}
   m_EdgeRadius: 0
---- !u!114 &3563039725967428172
+--- !u!114 &6718878408423975561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3074378132893140665}
   - component: {fileID: 2845465084297371375}
-  - component: {fileID: 1975901139712700589}
+  - component: {fileID: 5856609676457161012}
   m_Layer: 0
   m_Name: DoorDown
   m_TagString: Door
@@ -199,7 +199,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9947879, y: 0.30802894}
   m_EdgeRadius: 0
---- !u!114 &1975901139712700589
+--- !u!114 &5856609676457161012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

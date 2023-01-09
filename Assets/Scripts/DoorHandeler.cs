@@ -1,14 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DoorHandeler : MonoBehaviour
 {
+    static System.Random rnd = new System.Random();
+
+    [SerializeField]
+    private AudioClip[] _doorSound = new AudioClip[2];
+    [SerializeField]
+    private AudioClip _lockSound;
+
+    private AudioSource _audio;
+
     private Tp_script myTp;
 
     private bool _touchingDoor = false;
     private bool _touchingLock = false;
+
+    private void Start()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
 
     public void HandleInteract(InputAction.CallbackContext ctx)
     {
@@ -20,11 +35,6 @@ public class DoorHandeler : MonoBehaviour
                 StartCoroutine("PassDoor");
             }
         }
-        else if (ctx.phase == InputActionPhase.Started)
-        {
-
-        }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -33,8 +43,21 @@ public class DoorHandeler : MonoBehaviour
             _touchingLock = true;
             if (GetComponent<InventoryHandeler>().Inventory["Key"] > 0)
             {
+                _audio.clip = _lockSound;
+                _audio.Play();
                 Destroy(other.gameObject);
                 GetComponent<InventoryHandeler>().Inventory["Key"] -= 1;
+            }
+        }
+        if (other.tag == "BossLock")
+        {
+            _touchingLock = true;
+            if (GetComponent<InventoryHandeler>().Inventory["BossKey"] > 0)
+            {
+                _audio.clip = _lockSound;
+                _audio.Play();
+                Destroy(other.gameObject);
+                GetComponent<InventoryHandeler>().Inventory["BossKey"] -= 1;
             }
         }
         if (other.tag == "Door")
@@ -50,7 +73,7 @@ public class DoorHandeler : MonoBehaviour
             _touchingDoor = false;
             myTp = null;
         }
-        if (other.tag == "Lock")
+        if (other.tag == "Lock" || other.tag == "BossLock")
         {
             _touchingLock = false;
         }
@@ -58,6 +81,9 @@ public class DoorHandeler : MonoBehaviour
     IEnumerator PassDoor()
     {
         PlayerInput Input = GetComponent<PlayerInput>();
+        int randomSound = rnd.Next(0, 1);
+        _audio.clip = _doorSound[randomSound];
+        _audio.Play();
 
         Input.enabled = false;
         yield return new WaitForSeconds(0.5f);

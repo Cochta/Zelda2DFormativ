@@ -7,12 +7,14 @@ public class FloorPuzzleCheck : MonoBehaviour
     [SerializeField]
     private GameObject _key;
 
+    private AudioSource _audio;
+
     private bool[] _activatedDalles = new bool[9];
     private bool _isWon = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class FloorPuzzleCheck : MonoBehaviour
         {
             foreach (var collider in GetComponentsInChildren<BoxCollider2D>())
             {
+                _audio.Play();
                 collider.enabled = false;
                 _key.SetActive(true);
             }

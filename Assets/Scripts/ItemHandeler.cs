@@ -25,6 +25,13 @@ public class ItemHandeler : MonoBehaviour
             _inventory.Inventory["Key"] += 1;
             Destroy(other.gameObject);
         }
+        if (other.tag == "BossKey")
+        {
+            _audio.clip = _pickupSound;
+            _audio.Play();
+            _inventory.Inventory["BossKey"] += 1;
+            Destroy(other.gameObject);
+        }
         if (other.tag == "BombPickup")
         {
             _inventory.Inventory["Bomb"] += 1;

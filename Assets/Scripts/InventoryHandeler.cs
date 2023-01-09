@@ -12,6 +12,7 @@ public class InventoryHandeler : MonoBehaviour
         Inventory = new Dictionary<string, int>();
         Inventory["Key"] = 0;
         Inventory["Bomb"] = 0;
+        Inventory["BossKey"] = 0;
     }
 
     // Update is called once per frame

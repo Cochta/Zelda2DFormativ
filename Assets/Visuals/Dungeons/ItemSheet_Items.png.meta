@@ -399,7 +399,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ItemSheet_Items_14
+      name: KeyBlue
       rect:
         serializedVersion: 2
         x: 96
@@ -420,7 +420,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ItemSheet_Items_15
+      name: KeyGold
       rect:
         serializedVersion: 2
         x: 112
@@ -1314,10 +1314,12 @@ TextureImporter:
       ItemSheet_Items_40: 634927781
       ItemSheet_Items_39: 424834036
       ItemSheet_Items_18: 1899456517
+      KeyGold: -1640572569
       ItemSheet_Items_47: 2089442838
       ItemSheet_Items_17: -1366229268
       ItemSheet_Items_55: 657687575
       ItemSheet_Items_22: -961525683
+      KeyBlue: 1032385797
       ItemSheet_Items_54: 866556297
       ItemSheet_Items_16: -1026970333
       ItemSheet_Items_53: 1805694075
@@ -1335,7 +1337,6 @@ TextureImporter:
       ItemSheet_Items_28: 1061257845
       ItemSheet_Items_50: 1343822484
       ItemSheet_Items_25: 176890193
-      ItemSheet_Items_15: -1640572569
       Brick: 1931908374
       ItemSheet_Items_2: -997626565
       ItemSheet_Items_8: 1300859853
@@ -1346,7 +1347,6 @@ TextureImporter:
       ItemSheet_Items_38: 1607903053
       ItemSheet_Items_3: 118975473
       ItemSheet_Items_12: -1846091490
-      ItemSheet_Items_14: 1032385797
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
